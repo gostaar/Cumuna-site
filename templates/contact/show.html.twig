@@ -40,7 +40,7 @@
         </ul>
             {% endfor %}
 
-        <a href="{{ path('home') }}" type="button" class="btn btn-lg btn-primary mt-5 w-100" >Fermer</a>
+        <a href="{% if BASE_URL %}{{ BASE_URL }}{% else %}{{ path('home') }}{% endif %}" type="button" class="btn btn-lg btn-primary mt-5 w-100" >Fermer</a>
       </div>
     </div>
   </div>
