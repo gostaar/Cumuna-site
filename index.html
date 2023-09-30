@@ -16,8 +16,8 @@
 <!-- 		<select size=1 onchange="location = this.value"> -->
 		<?php function () { 
 		    $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
-// 		echo 'Connexion réussie';
-		    $requete = "select * from commune;
+		    // 		echo 'Connexion réussie';
+		    $requete = "select * from commune";
 		    $req = $bdd-\>prepare($requete);
 		    $req-\>execute();
 		    $coms = $req-\>fetchAll();
