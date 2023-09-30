@@ -15,19 +15,32 @@
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 <!-- 		<select size=1 onchange="location = this.value"> -->
-		<?php function () { 
+<!-- 		<?php function () { 
 		    $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
 		    // 		echo 'Connexion réussie';
-		    $requete = "select * from commune";
+		    $requete = mysql_query("select * from commune");
+		    mysql_select_db("commune");
 		    $req = $bdd->query($requete);
 		    $req->execute();
-		    $coms = $req->fetchAll();
-	
-	foreach ($coms as $com) { ?>
+		    $coms = $req->fetchAll(); -->
+
+<?php mysql_connect("mysql-hautecorse.alwaysdata.net","329087","Victoire2020");
+mysql_select_db("hautecorse_carte");
+$gram=intval($_POST['gram']);
+$color=$_POST['color'];
+$nomcommune=mysql_query("SELECT * FROM commune");
+while ($row=mysql_fetch_array($nomcommune))
+{
+ echo intval($nomcommune['cumuna']);
+ echo $nomcommune['nommaire'];
+}
+mysql_close(); ?>
+		    
+<!-- 	foreach ($coms as $com) { ?>
 <!-- 		<option value="/Cumuna-site/#<?php echo $com["cumuna"]?>"><?php echo $com["cumuna"]?></a></li></option> -->
 			<h1 style="text-align:center; color:black; font-family: Georgia, serif;"><?php echo $com["cumuna"]?></h1>
 	<?php } 
-});?>
+});?> -->
 			
 <!-- 		</select> -->
                
