@@ -22,7 +22,7 @@ $req->execute();
 $coms = $req->fetchAll();
 echo $com["cumuna"];			
 foreach ($coms as $com) { ?>
-   	<option value="/Cumuna-site/#<?php $com["cumuna"] ?> "> <?php $com["cumuna"] ?></a></li></option>
+   	<option value="/Cumuna-site/#<?php $com["cumuna"] . "\">" . $com["cumuna"] ?></a></li></option>
 <?php } ?>
 		</select>
                
