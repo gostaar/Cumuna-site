@@ -21,9 +21,11 @@ $req = $bdd->prepare($requete);
 $req->execute();
 $coms = $req->fetchAll();
 echo $com["cumuna"];			
-foreach ($coms as $com) { ?>
-   	<option value="/Cumuna-site/#<?php $com["cumuna"] . "\">" . $com["cumuna"] ?></a></li></option>
-<?php } ?>
+foreach ($coms as $com) { 
+$cumun = $com["cumuna"];
+$cumunTest = $com["cumuna"];
+echo "<option value=\"/Cumuna-site/#" . $cumun . "\">" . $cumunTest . "</a></li></option>" ;
+} ?>
 		</select>
                
             </ul> 
