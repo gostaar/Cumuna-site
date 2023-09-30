@@ -21,8 +21,8 @@ o<!DOCTYPE html>
 		$req->execute();
 		$coms = $req->fetchAll();
 			
-                foreach ($coms as $com) { ?> 
-                	echo "<option value=\"/Cumuna-site/#".$com["cumuna"]."\">".commune["cumuna"]."</a></li></option>";
+                foreach ($coms as $com) { 
+                	echo "<option value=\"/Cumuna-site/#".$com["cumuna"]."\">".$com["cumuna"]."</a></li></option>";
                 } ?>
 		</select>
                
