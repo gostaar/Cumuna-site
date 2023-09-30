@@ -19,7 +19,7 @@
    
 	$requete = "select * from commune where cumuna LIKE 'AMPRIANI'";
     $req = $bdd->prepare($requete);
-	$req->execute();
+	$req-\>execute();
 	$coms = $req->fetchAll();
 	
 	foreach ($coms as $com) { ?>
