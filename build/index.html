@@ -14,8 +14,13 @@
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 		<select size=1 onchange="location = this.value">
-<?php
-$bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
+<?php 
+			try {
+$bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020'); }
+			catch (Exception $e)
+{
+        die('Erreur : ' . $e->getMessage());
+}
 $reaquete = "select * from commune" ;
 $req = $bdd->prepare($requete);
 $req->execute();
