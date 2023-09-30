@@ -17,13 +17,9 @@
                     $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
                     // 		echo 'Connexion réussie';
    
-	                $cumuna = "select cumuna from commune ;
-                    $req = $bdd->prepare($cumuna);
-	                $req->execute();
-	                $coms = $req->fetchAll();
-	
-                	foreach ($com as $coms) { ?> 
-                <option value="/Cumuna-site/#<?php commune.cumuna ?>"><?php commune.cumuna ?></a></li>
+	            $cumuna = "select cumuna from commune ;
+                    ?> 
+                	<option value="/Cumuna-site/#<?php commune.cumuna ?>"><?php commune.cumuna ?></a></li>
                 		
                 	<?php } ?>
                 <select size=1 onchange="location = this.value">
