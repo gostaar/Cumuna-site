@@ -16,11 +16,10 @@
 <!-- 		<select size=1 onchange="location = this.value"> -->
 		<?php $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
 // 		echo 'Connexion réussie';
-   
-	$requete = "select * from commune where cumuna LIKE 'AMPRIANI'";
-    $req = $bdd-\>prepare($requete);
-	$req->execute();
-	$coms = $req->fetchAll();
+		    $requete = "select * from commune;
+		    $req = $bdd->prepare($requete);
+		    $req->execute();
+		    $coms = $req->fetchAll();
 	
 	foreach ($coms as $com) { ?>
 <!-- 		<option value="/Cumuna-site/#<?php echo $com["cumuna"]?>"><?php echo $com["cumuna"]?></a></li></option> -->
