@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+o<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -22,8 +22,8 @@
 		$coms = $req->fetchAll();
 			
                 foreach ($coms as $com) { ?> 
-                	<option value="/Cumuna-site/#<?php commune.cumuna "><?php commune.cumuna ?></a></li></option>
-                <?php } ?>
+                	echo "<option value="/Cumuna-site/#".$com["cumuna"].">".$com["cumuna"]."</a></li></option>"
+                } ?>
 		</select>
                
             </ul> 
