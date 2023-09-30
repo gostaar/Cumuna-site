@@ -1,4 +1,4 @@
-o<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -14,10 +14,10 @@ o<!DOCTYPE html>
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 		<select size=1 onchange="location = this.value">
-                <?php
+<?php
 $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
-$cumuna = "select * from commune" ;
-$req = $bdd->prepare($cumuna);
+$reaquete = "select * from commune" ;
+$req = $bdd->prepare($requete);
 $req->execute();
 $coms = $req->fetchAll();
 foreach ($coms as $com) { 
