@@ -8,13 +8,7 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
     </head>
     <body>
-        
-      <header class="p-3 mb-3 border-bottom">
-        <div class="container">
-          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-		<select size=1 onchange="location = this.value">
-<?php 
+<?php add_shortcode(a , function() {
 			try {
 $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020'); }
 			catch (Exception $e)
@@ -24,15 +18,20 @@ $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_car
 $requete = "select * from commune" ;
 $req = $bdd->prepare($requete);
 $req->execute();
-$coms = $req->fetchAll();
-echo $coms['cumuna'];
-
-			
+$coms = $req->fetchAll(); 
 foreach ($coms as $com) { 
-$cumun = com['cumuna'];?>
-
-<option value="/Cumuna-site/#<?=$=print_r($cumun)?>"><?=print_r($cumun)?></a></li></option>
-<?= } ?>
+			$cumun = com['cumuna'];?>
+		
+			echo "<option value="/Cumuna-site/#" . echo $cumun? . "\">" . echo $cumun . "</a></li></option>
+		<?= }	    
+	    }?>
+	    
+      <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+          <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+		<select size=1 onchange="location = this.value">
+		<?= add_shortcode('commune');  ?>
 		</select>
                
             </ul> 
