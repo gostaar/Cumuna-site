@@ -20,6 +20,7 @@ $reaquete = "select * from commune" ;
 $req = $bdd->prepare($requete);
 $req->execute();
 $coms = $req->fetchAll();
+echo $com["cumuna"];			
 foreach ($coms as $com) { 
    	echo '<option value="/Cumuna-site/#'.$com["cumuna"]1.'">'.$com["cumuna"].'</a></li></option>';
 } ?>
