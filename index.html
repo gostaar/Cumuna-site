@@ -25,6 +25,8 @@ $requete = "select * from commune" ;
 $req = $bdd->prepare($requete);
 $req->execute();
 $coms = $req->fetchAll();
+echo $coms['cumuna'];
+
 			
 foreach ($coms as $com) { 
 $cumun = com['cumuna'];?>
