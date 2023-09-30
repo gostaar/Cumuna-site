@@ -15,19 +15,15 @@
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 		<select size=1 onchange="location = this.value">
                 <?php
-                    $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
-                    echo 'Connexion réussie';
-   
-	            $cumuna = "select cumuna from commune" ;
-		    $req = $bdd->prepare($requete);
-		    $req->execute();
-		    $coms = $req->fetchAll();
+                $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
+                $cumuna = "select * from commune" ;
+		$req = $bdd->prepare($cumuna);
+		$req->execute();
+		$coms = $req->fetchAll();
 			
-                    foreach ($coms as $com) {
-		    ?> 
+                foreach ($coms as $com) { ?> 
                 	<option value="/Cumuna-site/#<?php $com["cumuna"] ?>"><?php $com["cumuna"] ?></a></li></option>
-                		
-        	    <?php } ?>
+                <?php } ?>
 		</select>
                
             </ul> 
