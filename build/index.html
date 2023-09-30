@@ -15,15 +15,14 @@ o<!DOCTYPE html>
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 		<select size=1 onchange="location = this.value">
                 <?php
-                $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
-                $cumuna = "select * from commune" ;
-		$req = $bdd->prepare($cumuna);
-		$req->execute();
-		$coms = $req->fetchAll();
-			
-                foreach ($coms as $com) { 
-                	echo "<option value=\"/Cumuna-site/#".$com["cumuna"]."\">".$com["cumuna"]."</a></li></option>";
-                } ?>
+$bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_carte;charset=utf8', '329087', 'Victoire2020');
+$cumuna = "select * from commune" ;
+$req = $bdd->prepare($cumuna);
+$req->execute();
+$coms = $req->fetchAll();
+foreach ($coms as $com) { 
+   	echo '<option value="/Cumuna-site/#'.$com["cumuna"].'">'.$com["cumuna"].'</a></li></option>';
+} ?>
 		</select>
                
             </ul> 
