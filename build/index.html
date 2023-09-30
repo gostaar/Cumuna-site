@@ -21,11 +21,11 @@ $bdd = new PDO('mysql:host=mysql-hautecorse.alwaysdata.net;dbname=hautecorse_car
 {
         die('Erreur : ' . $e->getMessage());
 }
-$reaquete = "select * from commune" ;
+$requete = "select * from commune" ;
 $req = $bdd->prepare($requete);
 $req->execute();
 $coms = $req->fetchAll();
-			3
+			
 foreach ($coms as $com) { 
 $cumun = commune['cumuna'];?>
 
